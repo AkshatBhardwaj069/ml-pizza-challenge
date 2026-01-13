@@ -1,22 +1,18 @@
-# 🍕 ML Pizza Prediction Challenge
+# 🍕 ML Request Success Prediction Challenge
 
-**Goal:** Build a machine learning model to predict whether a Reddit user's pizza request will be fulfilled.
-
-## 📋 Background
-
-This dataset contains requests from the Reddit community "Random Acts of Pizza" where users post requests asking for free pizza. Your task is to predict which requests were successful.
+**Goal:** Build a machine learning model to predict whether a user's request will be successful.
 
 ## 📁 Dataset Files
 
 | File | Description |
 |------|-------------|
-| `data/candidate_train.json` | Training data with 3200 labeled examples |
-| `data/candidate_test.json` | Test data with 800 examples (no labels) |
+| `data/train.json` | Training data with 3200 labeled examples |
+| `data/test.json` | Test data with 800 examples (no labels) |
 
 ## 🎯 Task
 
-1. Build a classifier using `data/candidate_train.json`
-2. Predict labels for `data/candidate_test.json`
+1. Build a classifier using `data/train.json`
+2. Predict labels for `data/test.json`
 3. Submit your predictions in the format below
 
 ## 📤 Submission Format
@@ -30,7 +26,7 @@ def456...,False
 ```
 
 - `hashed_id`: The unique identifier from the test set
-- `prediction`: Your predicted label (`True` = received pizza, `False` = did not receive pizza)
+- `prediction`: Your predicted label (`True` = successful, `False` = unsuccessful)
 
 See `sample_submission.csv` for an example format.
 
@@ -43,14 +39,14 @@ Each row contains:
 | `hashed_id` | string | Unique identifier for the request |
 | `request_text_edit_aware` | string | Text content of the request |
 | `request_title` | string | Title of the post |
-| `requester_username` | string | Reddit username |
+| `requester_username` | string | Username |
 | `requester_user_flair` | string | User badge/flair |
 | `requester_account_age_in_days_at_request` | int | Account age when posting |
 | `requester_upvotes_minus_downvotes_at_request` | int | Karma score |
 | `requester_number_of_comments_at_request` | int | Total comments by user |
 | `requester_number_of_posts_at_request` | int | Total posts by user |
-| `requester_number_of_subreddits_at_request` | int | Subreddits user posted in |
-| `requester_subreddits_at_request` | list | List of subreddits |
+| `requester_number_of_subreddits_at_request` | int | Number of communities user posted in |
+| `requester_subreddits_at_request` | list | List of communities |
 | `post_was_edited` | bool | Whether post was edited |
 | `unix_timestamp_of_request` | int | Timestamp of request |
 | `requester_received_pizza` | bool | **Target variable (train only)** |
